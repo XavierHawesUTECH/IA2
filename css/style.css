@@ -1,0 +1,201 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500;700;800&display=swap');
+
+:root {
+    --neutral-0: hsl(0, 0%, 100%);
+    --orange-500: hsl(7, 88%, 67%);
+    --error-red: #ff6b6b;
+    --font-main: 'Inconsolata', monospace;
+}
+
+body {
+    font-family: var(--font-main);
+    background-image: url('https://uploads.onecompiler.io/454dn93ez/457chmas4/background-desktop.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: var(--neutral-0);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    position: relative;
+    overflow-x: hidden;
+}
+
+body::before {
+    content: "";
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 40vw;
+    max-width: 600px;
+    height: 40vh;
+    background-image: url('https://uploads.onecompiler.io/454dn93ez/457chmas4/pattern-squiggly-line-bottom-desktop.svg');
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
+}
+
+body::after {
+    content: "";
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 30vw;
+    max-width: 450px;
+    height: 30vh;
+    background-image: url('https://uploads.onecompiler.io/454dn93ez/457chmas4/pattern-squiggly-line-top.svg');
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: contain;
+    pointer-events: none;
+    z-index: 0;
+}
+
+main {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+}
+
+.logo-container { display: flex; align-items: center; gap: 10px; margin-bottom: 1rem; }
+
+form { width: 100%; display: flex; flex-direction: column; gap: 15px; }
+
+.file-drop-zone,
+input {
+    transition: background 0.2s ease, border-color 0.2s ease, outline-color 0.2s ease;
+}
+
+.file-drop-zone {
+    border: 2px dashed rgba(255,255,255,0.3);
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+input {
+    padding: 15px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.1);
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.file-drop-zone:hover {
+    background: rgba(255, 255, 255, 0.12);
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+input:hover {
+    background: rgba(255, 255, 255, 0.18);
+    border-color: rgba(255, 255, 255, 0.4);
+}
+
+.file-drop-zone:focus-visible,
+input:focus {
+    outline: 2px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 3px;
+}
+
+.input-error,
+.input-error:hover {
+    border-color: var(--error-red);
+    background: rgba(255, 107, 107, 0.12);
+}
+
+.file-info { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+
+button { padding: 15px; background: var(--orange-500); border: none; color: white; font-weight: 800; cursor: pointer; border-radius: 8px; margin-top: 10px; }
+
+.ticket-card {
+    background: url('https://uploads.onecompiler.io/454dn93ez/457chmas4/pattern-ticket.svg') no-repeat center / 100% 100%;
+    aspect-ratio: 600 / 280;
+    width: 100%;
+    max-width: 500px;
+    margin-top: 2rem;
+    padding: 1.5rem 4rem 1.5rem 2rem;
+    box-sizing: border-box;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.user-info img {
+    width: 60px;
+    height: 60px;
+    border-radius: 10px;
+    object-fit: cover;
+}
+
+.ticket-number {
+    color: var(--orange-500);
+    font-weight: 800;
+    position: absolute;
+    right: 1.25rem;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    transform-origin: center;
+}
+
+.file-drop-zone img.has-preview {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.file-drop-zone .preview-actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.file-drop-zone .preview-actions button {
+    padding: 6px 12px;
+    margin-top: 0;
+    font-size: 0.85rem;
+    font-weight: 500;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    text-decoration: underline;
+    font-family: var(--font-main);
+}
+
+.file-drop-zone .preview-actions button:hover {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+@media (max-width: 600px) {
+    body::before, body::after {
+        width: 60vw;
+        height: 20vh;
+    }
+
+    .ticket-card {
+        aspect-ratio: auto;
+        min-height: 220px;
+    }
+}

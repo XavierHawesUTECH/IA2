@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>Your Ticket | Coding Conf 2026</title>
+    <style>
+        .logo-container h1 {
+            font-size: 1.5rem;
+            margin: 0;
+        }
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+        }
+        p {
+            text-align: center;
+            font-size: 1rem;
+        }
+        .highlight {
+            color: hsl(7, 88%, 67%);
+        }
+        .github-text {
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="logo-container">
+            <img src="https://uploads.onecompiler.io/454dn93ez/457chmas4/logo-mark.svg" alt="Logo">
+            <h1>Coding Conf</h1>
+        </div>
+        
+        <h2>
+            Congratulations, <span id="displayName" class="highlight"></span>! Your ticket is ready.
+        </h2>
+        <p>
+            We have emailed a ticket to <span id="displayEmail" class="highlight"></span> and will send updates in the run up to the event.
+        </p>
+
+        <div class="ticket-card">
+            <img id="displayAvatar" style="width: 80px; border-radius: 10px;">
+            <h3 id="displayFullName"></h3>
+            <div class="user-info">
+                <img src="https://uploads.onecompiler.io/454dn93ez/457chmas4/icon-github.svg" alt="GitHub" style="width: 20px; height: 20px;">
+                <span id="displayGithub" class="github-text"></span>
+            </div>
+            <div class="ticket-number">#01609</div>
+        </div>
+    </main>
+    <script src="ticket.js"></script>
+</body>
+</html>
