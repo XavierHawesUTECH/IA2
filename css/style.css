@@ -9,7 +9,7 @@
 
 body {
     font-family: var(--font-main);
-    background-image: url('https://uploads.onecompiler.io/454dn93ez/457chmas4/background-desktop.png');
+    background-image: url('../assets/background-desktop.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
